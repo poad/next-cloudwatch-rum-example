@@ -1,0 +1,29 @@
+{
+  "name": "infra",
+  "version": "0.0.1",
+  "private": true,
+  "license": "UNLICENSED",
+  "bin": {
+    "infra": "bin/infra.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "aws-cdk": "latest",
+    "jest": "latest",
+    "ts-jest": "latest",
+    "ts-node": "latest",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "latest",
+    "constructs": "latest",
+    "source-map-support": "latest"
+  }
+}

@@ -11,7 +11,7 @@ updates:
       - poad
 
   - package-ecosystem: npm
-    directory: '/'
+    directory: '/pages/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo

@@ -10,6 +10,10 @@ on:
 
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -22,6 +26,9 @@ jobs:
         node-version: 14.x
         check-latest: true
         cache: yarn
+        cache-dependency-path: |
+          pages/yarn.lock
+          infra/yarn.lock
 
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
@@ -35,10 +42,11 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
 
-    - run: yarn install
-    - run: yarn lint
-    - run: yarn build
-    - run: yarn test
+    - name: Build (pages)
+      run: cd pages; yarn install && yarn lint && yarn build && yarn test && yarn export
+  
+    - name: Build (infra)
+      run: cd infra; yarn install && yarn build
   
   configure:
     runs-on: ubuntu-latest
@@ -51,7 +59,7 @@ jobs:
       uses: poad/github-pull-request-auto-merge-enable-action@v1.0.1
       with:
         pull_request_id: ${{ github.event.pull_request.node_id }}
-        github_token: ${{ secrets.PERSONAL_TOKEN_FOR_GITHUB_ACTIONS }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         repository: ${{ github.event.repository.name }}
         owner: ${{ github.repository_owner }}
         merge_method: SQUASH
