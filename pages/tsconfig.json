@@ -41,7 +41,6 @@
       ]
     },
     "types": [
-      "node",
       "react"
     ],
     "incremental": true

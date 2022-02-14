@@ -22,6 +22,9 @@ jobs:
         node-version: 14.x
         check-latest: true
         cache: yarn
+        cache-dependency-path: |
+          pages/yarn.lock
+          infra/yarn.lock
 
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
@@ -35,10 +38,8 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
 
-    - run: yarn install
-    - run: yarn lint
-    - run: yarn build
-    - run: yarn test
+    - name: Build
+      run: yarn install && yarn lint && yarn build && yarn test
   
   configure:
     runs-on: ubuntu-latest

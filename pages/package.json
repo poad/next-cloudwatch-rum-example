@@ -1,11 +1,13 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "next-html-import-example",
+  "version": "0.0.1",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "test": "jest --passWithNoTests",
     "dev": "next",
-    "build": "yarn clean && next build && next export",
+    "export": "yarn build && next export",
+    "build": "yarn clean && next build",
     "start": "next start",
     "lint": "eslint --ext .ts,.js,.tsx,.jsx src",
     "clean": "rimraf build",
