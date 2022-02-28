@@ -4,7 +4,7 @@ on:
   pull_request_target:
 
 permissions:
-  id-token: read
+  id-token: write
   contents: write
   checks: write
   statuses: write
