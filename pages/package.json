@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest --passWithNoTests",
     "dev": "next",
-    "export": "yarn build && next export",
-    "build": "yarn clean && next build",
+    "export": "rimraf build && next build && next export",
+    "build": "rimraf build && next build",
     "start": "next start",
     "lint": "eslint --ext .ts,.js,.tsx,.jsx src",
     "clean": "rimraf build",

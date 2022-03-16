@@ -18,6 +18,7 @@ export default class NextDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
+          {/* eslint-disable-next-line @next/next/no-sync-scripts */}
           <script src="/rum.js" />
         </Head>
         <body>

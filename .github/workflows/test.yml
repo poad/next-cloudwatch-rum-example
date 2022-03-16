@@ -43,10 +43,12 @@ jobs:
           ${{ runner.os }}-yarn-
 
     - name: Build (pages)
-      run: cd pages; yarn install && yarn lint && yarn build && yarn test && yarn export
+      working-directory: pages
+      run: yarn install && yarn lint && yarn build && yarn test && yarn export
   
     - name: Build (infra)
-      run: cd infra; yarn install && yarn build
+      working-directory: infra
+      run: yarn install && yarn build
   
   configure:
     runs-on: ubuntu-latest
