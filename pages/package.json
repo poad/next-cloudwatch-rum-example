@@ -20,7 +20,7 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@mui/styles": "latest",
-    "@types/react": "^17.0.41",
+    "@types/react": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"

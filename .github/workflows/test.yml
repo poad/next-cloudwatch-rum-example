@@ -34,7 +34,7 @@ jobs:
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
 
-    - uses: actions/cache@v3
+    - uses: actions/cache@v2
       id: yarn-cache
       with:
         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -44,11 +44,11 @@ jobs:
 
     - name: Build (pages)
       working-directory: pages
-      run: yarn install && yarn lint && rm -rf build && yarn build && yarn test && rm -rf build && yarn export
+      run: yarn install; yarn lint && rm -rf build && yarn build && yarn test && rm -rf build && yarn export
   
     - name: Build (infra)
       working-directory: infra
-      run: yarn install && rm -rf build && yarn build
+      run: yarn install; rm -rf build && yarn build
   
   configure:
     runs-on: ubuntu-latest
