@@ -13,17 +13,17 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@types/jest": "latest",
-    "@types/node": "latest",
-    "aws-cdk": "latest",
-    "jest": "latest",
-    "ts-jest": "latest",
-    "ts-node": "latest",
-    "typescript": "latest"
+    "@types/jest": "*",
+    "@types/node": "*",
+    "aws-cdk": "*",
+    "jest": "*",
+    "ts-jest": "*",
+    "ts-node": "*",
+    "typescript": "*"
   },
   "dependencies": {
-    "aws-cdk-lib": "latest",
-    "constructs": "latest",
-    "source-map-support": "latest"
+    "aws-cdk-lib": "*",
+    "constructs": "*",
+    "source-map-support": "*"
   }
 }
