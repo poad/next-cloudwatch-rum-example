@@ -11,10 +11,11 @@
     "start": "next start",
     "lint": "eslint --ext .ts,.js,.tsx,.jsx src",
     "clean": "rimraf build",
+    "analyze": "ANALYZE=true next build",
     "all": "yarn install && yarn lint && yarn build && yarn test"
   },
   "dependencies": {
-    "@emotion/cache": "^11.7.1",
+    "@emotion/cache": "*",
     "@emotion/react": "*",
     "@emotion/server": "*",
     "@emotion/styled": "*",
@@ -27,6 +28,7 @@
     "react-dom": "*"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "*",
     "@swc/jest": "*",
     "@types/jest": "*",
     "@types/node": "*",
@@ -45,8 +47,16 @@
     "eslint-plugin-react": "*",
     "eslint-plugin-react-hooks": "*",
     "jest": "*",
+    "next-compose-plugins": "*",
     "rimraf": "*",
     "swc-loader": "*",
     "typescript": "*"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(t|j)sx?$": [
+        "@swc/jest"
+      ]
+    }
   }
 }
