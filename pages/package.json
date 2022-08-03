@@ -21,7 +21,6 @@
     "@emotion/styled": "*",
     "@mui/icons-material": "*",
     "@mui/material": "*",
-    "@mui/styles": "*",
     "@types/react": "*",
     "next": "*",
     "react": "*",
