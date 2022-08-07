@@ -22,12 +22,12 @@
     "@mui/icons-material": "*",
     "@mui/material": "*",
     "@types/react": "*",
-    "next": "*",
+    "next": "^12",
     "react": "*",
     "react-dom": "*"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "*",
+    "@next/bundle-analyzer": "^12",
     "@swc/jest": "*",
     "@types/jest": "*",
     "@types/node": "*",
@@ -37,7 +37,7 @@
     "eslint-config-airbnb-base": "*",
     "eslint-config-airbnb-typescript": "*",
     "eslint-config-import": "*",
-    "eslint-config-next": "*",
+    "eslint-config-next": "^12",
     "eslint-import-resolver-typescript": "*",
     "eslint-plugin-flowtype": "*",
     "eslint-plugin-import": "*",
