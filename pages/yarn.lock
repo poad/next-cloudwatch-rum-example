@@ -2894,7 +2894,7 @@ jest-matcher-utils@^29.0.2:
     jest-get-type "^29.0.0"
     pretty-format "^29.0.2"
 
-jest-message-util@^29.0.2:
+jest-message-util@^29.0.1:
   version "29.0.2"
   resolved "https://registry.yarnpkg.com/jest-message-util/-/jest-message-util-29.0.2.tgz#b2781dfb6a2d1c63830d9684c5148ae3155c6154"
   integrity sha512-kcJAgms3ckJV0wUoLsAM40xAhY+pb9FVSZwicjFU9PFkaTNmqh9xd99/CzKse48wPM1ANUQKmp03/DpkY+lGrA==
