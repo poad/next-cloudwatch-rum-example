@@ -50,6 +50,10 @@ jobs:
       working-directory: infra
       run: yarn install; rm -rf build && yarn build
   
+    - name: Build (infra/function)
+      working-directory: infra/function
+      run: yarn install && yarn build
+  
   configure:
     runs-on: ubuntu-latest
 
