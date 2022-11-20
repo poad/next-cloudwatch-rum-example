@@ -9,5 +9,5 @@ nextJsExport();
 const app = new cdk.App();
 new InfraStack(app, 'next-cloudwatch-rum-example', {
   name: 'next-html-import-example',
-  region: 'us-west-2'
+  region: 'us-west-2',
 });

@@ -1,0 +1,15 @@
+{
+  "name": "@next-cloudwatch-rum-example/function",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint --ext .ts lambda bin lib",
+    "style-check": "prettier --write lambda bin lib",
+    "format": "prettier --write lambda bin lib",
+    "fix": "prettier --write lambda bin lib && eslint --fix --ext .ts lambda bin lib"
+  },
+  "devDependencies": {
+    "typescript": "*"
+  }
+}
