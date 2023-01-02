@@ -39,5 +39,8 @@
     "aws-cdk-lib": "*",
     "constructs": "*",
     "source-map-support": "*"
+  },
+  "resolutions": {
+    "json5": ">=2.2.3"
   }
 }

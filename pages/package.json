@@ -51,6 +51,9 @@
     "swc-loader": "*",
     "typescript": "*"
   },
+  "resolutions": {
+    "json5": ">=2.2.3"
+  },
   "jest": {
     "transform": {
       "^.+\\.(t|j)sx?$": [
