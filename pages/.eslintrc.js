@@ -52,5 +52,6 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': ['off'],
     'no-return-assign': ['off'],
     'react/display-name': ['off'],
+    'react/react-in-jsx-scope': ['off'],
   }
 }
