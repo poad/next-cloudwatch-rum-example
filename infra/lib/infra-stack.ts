@@ -115,7 +115,6 @@ export class InfraStack extends Stack {
       '',
     );
 
-
     // eslint-disable-next-line no-new
     new s3deploy.BucketDeployment(this, 'DeployWebsite', {
       sources: [s3deploy.Source.asset(`${process.cwd()}/../pages/out`)],

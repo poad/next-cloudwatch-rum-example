@@ -5,6 +5,8 @@
     "lib": ["ES5"],
     "declaration": false,
     "strict": true,
+    "baseUrl": ".",
+    "rootDir": ".",
     "noImplicitAny": true,
     "strictNullChecks": true,
     "noImplicitThis": true,
@@ -17,5 +19,11 @@
     "inlineSources": false,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "cdk.out",
+    "../node_modules",
+    "../../node_modules"
+  ]
 }

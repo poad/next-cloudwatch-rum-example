@@ -1,17 +1,26 @@
 import { PropsWithChildren, useState } from 'react';
 import {
-  AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography,
+  AppBar,
+  Box,
+  CssBaseline,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Toolbar,
+  Typography,
 } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import MenuIcon from '@mui/icons-material/Menu';
-import {
-  useTheme,
-} from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 
 const drawerWidth = 240;
 
 interface LayoutProps {
-  container?: Element
+  container?: Element;
 }
 
 const Layout = (props: PropsWithChildren<LayoutProps>) => {
@@ -24,20 +33,32 @@ const Layout = (props: PropsWithChildren<LayoutProps>) => {
   }
 
   const drawer = (
-    <Box sx={{ width: drawerWidth, backgroundColor: theme.palette.primary.main, color: theme.palette.primary.contrastText }}>
+    <Box
+      sx={{
+        width: drawerWidth,
+        backgroundColor: theme.palette.primary.main,
+        color: theme.palette.primary.contrastText,
+      }}
+    >
       <Box sx={theme.mixins.toolbar} />
       <Divider />
       <List>
         {['Info'].map((text) => (
-          <ListItem button key={text} sx={{
-            width: drawerWidth,
-            backgroundColor: theme.palette.primary.main,
-            '&:hover': {
-              backgroundColor: theme.palette.primary.light,
-            },
-          }}>
+          <ListItem
+            button
+            key={text}
+            sx={{
+              width: drawerWidth,
+              backgroundColor: theme.palette.primary.main,
+              '&:hover': {
+                backgroundColor: theme.palette.primary.light,
+              },
+            }}
+          >
             <ListItemIcon>
-              <DashboardIcon sx={{ color: theme.palette.primary.contrastText }} />
+              <DashboardIcon
+                sx={{ color: theme.palette.primary.contrastText }}
+              />
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -57,7 +78,7 @@ const Layout = (props: PropsWithChildren<LayoutProps>) => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap></Typography>
+        <Typography variant="h6" noWrap />
       </Toolbar>
     </AppBar>
   );
@@ -77,7 +98,11 @@ const Layout = (props: PropsWithChildren<LayoutProps>) => {
         open={mobileOpen}
         onClose={handleDrawerToggle}
         sx={{
-          '& .MuiDrawer-paper': { backgroundColor: theme.palette.primary.main, boxSizing: 'border-box', width: drawerWidth },
+          '& .MuiDrawer-paper': {
+            backgroundColor: theme.palette.primary.main,
+            boxSizing: 'border-box',
+            width: drawerWidth,
+          },
         }}
         ModalProps={{ keepMounted: true }}
       >
@@ -87,7 +112,13 @@ const Layout = (props: PropsWithChildren<LayoutProps>) => {
   );
 
   return (
-    <Box sx={{ color: theme.palette.primary.contrastText, display: 'flex', maxHeight: '100vh' }}>
+    <Box
+      sx={{
+        color: theme.palette.primary.contrastText,
+        display: 'flex',
+        maxHeight: '100vh',
+      }}
+    >
       <CssBaseline />
       {appBar}
       {drawerBox}
