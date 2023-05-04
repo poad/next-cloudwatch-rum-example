@@ -10,27 +10,25 @@
     "build": "tsc",
     "watch": "tsc -w",
     "cdk": "cdk",
-    "lint": "eslint --ext .ts function bin lib",
-    "style-check": "prettier --write function bin lib",
-    "format": "prettier --write function bin lib",
-    "fix": "prettier --write function bin lib && eslint --fix --ext .ts function bin lib"
+    "format-check": "rome format function bin lib",
+    "format": "rome format --write function bin lib",
+    "check": "rome check function bin lib",
+    "check-fix": "rome check --apply-unsafe function bin lib",
+    "prelint": "yarn install",
+    "prebuild": "yarn install",
+    "prefix": "yarn install",
+    "precheck": "yarn install",
+    "precheck-fix": "yarn install",
+    "preformat": "yarn install",
+    "preformat-check": "yarn install",
+    "lint": "yarn format-check && yarn check",
+    "lint-fix": "yarn format && yarn check-fix"
   },
   "devDependencies": {
     "@swc/core": "*",
     "@swc/helpers": "*",
     "@types/node": "*",
-    "@types/prettier": "*",
-    "@typescript-eslint/eslint-plugin": "*",
-    "@typescript-eslint/parser": "*",
-    "aws-cdk": "*",
-    "eslint": "*",
-    "eslint-config-airbnb-base": "*",
-    "eslint-config-airbnb-typescript": "*",
-    "eslint-config-prettier": "*",
-    "eslint-plugin-import": "*",
-    "eslint-plugin-jest": "*",
-    "eslint-plugin-prettier": "*",
-    "prettier": "*",
+    "rome": "*",
     "regenerator-runtime": "*",
     "ts-node": "*",
     "typescript": "*"
@@ -39,8 +37,5 @@
     "aws-cdk-lib": "*",
     "constructs": "*",
     "source-map-support": "*"
-  },
-  "resolutions": {
-    "json5": ">=2.2.3"
   }
 }

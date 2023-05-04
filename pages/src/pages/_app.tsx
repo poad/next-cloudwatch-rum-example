@@ -20,7 +20,9 @@ const App = ({ Component }: AppProps): JSX.Element => (
 
 /* eslint-disable no-restricted-globals */
 App.onRedirectCallback = (appState: { targetUrl: string }): void => {
-  history.state.push(appState && appState.targetUrl ? appState.targetUrl : window.location.pathname);
+  history.state.push(
+    appState?.targetUrl ? appState.targetUrl : window.location.pathname,
+  );
 };
 /* eslint-enable no-restricted-globals */
 

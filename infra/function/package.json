@@ -1,13 +1,10 @@
 {
-  "name": "@next-cloudwatch-rum-example/function",
+  "name": "function",
   "version": "0.1.0",
+  "license": "UNLICENSED",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w",
-    "lint": "eslint --ext .ts lambda bin lib",
-    "style-check": "prettier --write lambda bin lib",
-    "format": "prettier --write lambda bin lib",
-    "fix": "prettier --write lambda bin lib && eslint --fix --ext .ts lambda bin lib"
+    "watch": "tsc -w"
   },
   "devDependencies": {
     "typescript": "*"

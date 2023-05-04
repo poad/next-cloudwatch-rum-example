@@ -1,0 +1,15 @@
+{
+  "name": "next-cloudwatch-rum-example",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "yarn workspace infra lint && yarn workspace pages lint",
+    "lint-fix": "yarn workspace infra lint-fix && yarn workspace pages lint-fix",
+    "build": "yarn workspace infra build && yarn workspace pages build"
+  },
+  "workspaces": [
+    "./infra",
+    "./pages"
+  ]
+}
