@@ -20,15 +20,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Use Node.js 20.x
+    - name: Use Node.js 18.x
       uses: actions/setup-node@v3.6.0
       with:
-        node-version: 20.x
+        node-version: 18.x
         check-latest: true
         cache: yarn
-        cache-dependency-path: |
-          pages/yarn.lock
-          infra/yarn.lock
 
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
