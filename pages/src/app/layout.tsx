@@ -1,4 +1,5 @@
-import { PropsWithChildren, useState } from 'react';
+'use client';
+import { ReactNode, useState } from 'react';
 import {
   AppBar,
   Box,
@@ -11,20 +12,17 @@ import {
   ListItemIcon,
   ListItemText,
   Toolbar,
+  ThemeProvider,
   Typography,
 } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import MenuIcon from '@mui/icons-material/Menu';
+import themes from './styles/theme';
 import { useTheme } from '@mui/material/styles';
 
 const drawerWidth = 240;
 
-interface LayoutProps {
-  container?: Element;
-}
-
-const Layout = (props: PropsWithChildren<LayoutProps>) => {
-  const { container } = props;
+function Base({children}: {children: ReactNode}) {
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -92,7 +90,6 @@ const Layout = (props: PropsWithChildren<LayoutProps>) => {
       display='contents'
     >
       <Drawer
-        container={container}
         variant="temporary"
         anchor='left'
         open={mobileOpen}
@@ -122,9 +119,29 @@ const Layout = (props: PropsWithChildren<LayoutProps>) => {
       <CssBaseline />
       {appBar}
       {drawerBox}
-      {props.children}
+      {children}
     </Box>
   );
-};
+}
 
-export default Layout;
+export default function Layout({children}: {children: ReactNode}) {
+  return (
+    <html lang="en">
+      <ThemeProvider theme={themes}>
+        <head>
+          {/* PWA primary color */}
+          <meta name="theme-color" content={themes.palette.primary.main} />
+          {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          />
+        </head>
+        <body>
+          <CssBaseline />
+          <Base>{children}</Base>
+        </body>
+    </ThemeProvider>
+    </html>
+  );
+}

@@ -1,20 +1,15 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-    enabled: process.env.ANALYZE === 'true',
+  enabled: process.env.ANALYZE === 'true',
 });
 
 /** @type {import('next').NextConfig} */
 const config = {
-    reactStrictMode: true,
-    swcMinify: true,
-    transpilePackages: ['@mui/icons-material'],
-    eslint: {
-      ignoreDuringBuilds: true,
-    },
-    modularizeImports: {
-      '@mui/icons-material/?(((\\w*)?/?)*)': {
-        transform: '@mui/icons-material/{{ matches.[1] }}/{{member}}',
-      },
-    },
-  };
+  output: 'export',
+  reactStrictMode: true,
+  swcMinify: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+};
 
 module.exports = withBundleAnalyzer(config);
