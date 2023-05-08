@@ -28,8 +28,8 @@
     "@swc/core": "*",
     "@swc/helpers": "*",
     "@types/node": "*",
-    "rome": "*",
     "regenerator-runtime": "*",
+    "rome": "*",
     "ts-node": "*",
     "typescript": "*"
   },
