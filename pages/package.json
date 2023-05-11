@@ -28,13 +28,10 @@
     "all": "yarn lint && yarn build && yarn test"
   },
   "dependencies": {
-    "@emotion/cache": "*",
     "@emotion/react": "*",
-    "@emotion/server": "*",
     "@emotion/styled": "*",
     "@mui/icons-material": "*",
     "@mui/material": "*",
-    "@types/react": "*",
     "next": "^13",
     "react": "*",
     "react-dom": "*"
@@ -44,6 +41,7 @@
     "@swc/jest": "*",
     "@types/jest": "*",
     "@types/node": "*",
+    "@types/react": "*",
     "jest": "*",
     "rimraf": "*",
     "rome": "*",
