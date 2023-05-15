@@ -55,21 +55,21 @@ const Home = (): JSX.Element => {
         </Typography>
 
         <StyledBox>
-          <CardStyleLink href="https://nextjs.org/docs">
+          <CardStyleLink href='https://nextjs.org/docs'>
             <Typography component='h3'>Documentation &rarr;</Typography>
             <Typography component='p'>
               Learn more about Next.js in the documentation.
             </Typography>
           </CardStyleLink>
-          <CardStyleLink href="https://nextjs.org/learn" className="card">
+          <CardStyleLink href='https://nextjs.org/learn' className='card'>
             <Typography component='h3'>Next.js Learn &rarr;</Typography>
             <Typography component='p'>
               Learn about Next.js by following an interactive tutorial!
             </Typography>
           </CardStyleLink>
           <CardStyleLink
-            href="https://github.com/zeit/next.js/tree/master/examples"
-            className="card"
+            href='https://github.com/zeit/next.js/tree/master/examples'
+            className='card'
           >
             <Typography component='h3'>Examples &rarr;</Typography>
             <Typography component='p'>

@@ -22,7 +22,7 @@ import { useTheme } from '@mui/material/styles';
 
 const drawerWidth = 240;
 
-function Base({children}: {children: ReactNode}) {
+function Base({ children }: { children: ReactNode }) {
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -66,17 +66,17 @@ function Base({children}: {children: ReactNode}) {
   );
 
   const appBar = (
-    <AppBar position="fixed" sx={{ width: '100%' }}>
+    <AppBar position='fixed' sx={{ width: '100%' }}>
       <Toolbar>
         <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          edge="start"
+          color='inherit'
+          aria-label='open drawer'
+          edge='start'
           onClick={handleDrawerToggle}
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap />
+        <Typography variant='h6' noWrap />
       </Toolbar>
     </AppBar>
   );
@@ -86,11 +86,11 @@ function Base({children}: {children: ReactNode}) {
       component='nav'
       textAlign='center'
       sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-      aria-label="folders"
+      aria-label='folders'
       display='contents'
     >
       <Drawer
-        variant="temporary"
+        variant='temporary'
         anchor='left'
         open={mobileOpen}
         onClose={handleDrawerToggle}
@@ -124,24 +124,24 @@ function Base({children}: {children: ReactNode}) {
   );
 }
 
-export default function Layout({children}: {children: ReactNode}) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <ThemeProvider theme={themes}>
         <head>
           {/* PWA primary color */}
-          <meta name="theme-color" content={themes.palette.primary.main} />
+          <meta name='theme-color' content={themes.palette.primary.main} />
           {/* eslint-disable-next-line @next/next/no-page-custom-font */}
           <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel='stylesheet'
+            href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
           />
         </head>
         <body>
           <CssBaseline />
           <Base>{children}</Base>
         </body>
-    </ThemeProvider>
+      </ThemeProvider>
     </html>
   );
 }
