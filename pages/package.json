@@ -7,11 +7,7 @@
     "build": "next build",
     "export": "next build",
     "start": "next start",
-    "format-check": "rome format src",
-    "format": "rome format --write src",
-    "check": "rome check src",
-    "check-fix": "rome check --apply-unsafe src",
-    "lint": "yarn format-check && yarn check",
+    "lint": "next lint",
     "lint-fix": "yarn format && yarn check-fix",
     "clean": "rimraf build",
     "analyze": "ANALYZE=true next build",
@@ -22,7 +18,6 @@
     "precheck": "yarn install",
     "preformat-check": "yarn install",
     "precheck-fix": "yarn install",
-    "prebuild": "yarn lint",
     "all": "yarn build && yarn test"
   },
   "dependencies": {
@@ -37,10 +32,12 @@
     "web-vitals": "*"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^13",
     "@types/node": "*",
     "@types/react": "*",
+    "eslint": "*",
+    "eslint-config-next": "*",
     "rimraf": "*",
-    "rome": "*",
     "typescript": "*"
   }
 }
