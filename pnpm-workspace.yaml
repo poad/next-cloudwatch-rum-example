@@ -1,0 +1,4 @@
+packages:
+  - 'pages/*'
+  - 'infra/*'
+  - 'infra/function/*'

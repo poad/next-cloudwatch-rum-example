@@ -4,12 +4,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "yarn workspace infra lint && yarn workspace pages lint",
-    "lint-fix": "yarn workspace infra lint-fix && yarn workspace pages lint-fix",
-    "build": "yarn workspace infra build && yarn workspace pages build"
-  },
-  "workspaces": [
-    "./infra",
-    "./pages"
-  ]
+    "lint": "pnpm -r --if-present lint",
+    "lint-fix": "pnpm -r --if-present lint-fix",
+    "build": "pnpm -r --if-present build"
+  }
 }

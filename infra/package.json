@@ -14,28 +14,28 @@
     "format": "rome format --write bin && rome format --write lib",
     "check": "rome check bin && rome check lib",
     "check-fix": "rome check --apply-unsafe bin && rome check --apply-unsafe lib",
-    "prelint": "yarn install",
-    "prebuild": "yarn install",
-    "prefix": "yarn install",
-    "precheck": "yarn install",
-    "precheck-fix": "yarn install",
-    "preformat": "yarn install",
-    "preformat-check": "yarn install",
-    "lint": "yarn format-check && yarn check",
-    "lint-fix": "yarn format && yarn check-fix"
+    "prelint": "pnpm install",
+    "prebuild": "pnpm install",
+    "prefix": "pnpm install",
+    "precheck": "pnpm install",
+    "precheck-fix": "pnpm install",
+    "preformat": "pnpm install",
+    "preformat-check": "pnpm install",
+    "lint": "pnpm format-check && pnpm check",
+    "lint-fix": "pnpm format && pnpm check-fix"
   },
   "devDependencies": {
-    "@swc/core": "*",
-    "@swc/helpers": "*",
-    "@types/node": "*",
-    "regenerator-runtime": "*",
-    "rome": "*",
-    "ts-node": "*",
-    "typescript": "*"
+    "@swc/core": "^1.3.62",
+    "@swc/helpers": "^0.5.1",
+    "@types/node": "^20.2.5",
+    "regenerator-runtime": "^0.13.11",
+    "rome": "^12.1.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
   },
   "dependencies": {
-    "aws-cdk-lib": "*",
-    "constructs": "*",
-    "source-map-support": "*"
+    "aws-cdk-lib": "^2.83.0",
+    "constructs": "^10.2.45",
+    "source-map-support": "^0.5.21"
   }
 }
