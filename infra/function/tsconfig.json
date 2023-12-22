@@ -4,6 +4,7 @@
     "module": "esnext",
     "lib": ["esnext"],
     "declaration": false,
+    "moduleResolution": "node",
     "strict": true,
     "baseUrl": ".",
     "rootDir": ".",
