@@ -51,7 +51,7 @@
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
     "rimraf": "^5.0.5",
-    "storybook": "^7.6.17",
+    "storybook": "^8.0.0",
     "swc-loader": "^0.2.6",
     "typescript": "^5.4.2"
   }
