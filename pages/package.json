@@ -38,7 +38,7 @@
     "web-vitals": "^3.5.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.6.2",
+    "@biomejs/biome": "^1.6.3",
     "@next/bundle-analyzer": "^14.1.4",
     "@storybook/addon-essentials": "^8.0.4",
     "@storybook/addon-interactions": "^8.0.4",
@@ -48,7 +48,7 @@
     "@storybook/react": "^8.0.4",
     "@storybook/testing-library": "^0.2.2",
     "@types/node": "^20.11.30",
-    "@types/react": "^18.2.70",
+    "@types/react": "^18.2.71",
     "@types/react-dom": "^18.2.22",
     "rimraf": "^5.0.5",
     "storybook": "^8.0.4",
