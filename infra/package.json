@@ -10,10 +10,10 @@
     "build": "tsc",
     "watch": "tsc -w",
     "cdk": "cdk",
-    "format-check": "rome format bin && rome format lib",
-    "format": "rome format --write bin && rome format --write lib",
-    "check": "rome check bin && rome check lib",
-    "check-fix": "rome check --apply-unsafe bin && rome check --apply-unsafe lib",
+    "format-check": "biome format bin && biome format lib",
+    "format": "biome format --write bin && biome format --write lib",
+    "check": "biome check bin && biome check lib",
+    "check-fix": "biome check --apply-unsafe bin && biome check --apply-unsafe lib",
     "prelint": "pnpm install",
     "prebuild": "pnpm install",
     "prefix": "pnpm install",
@@ -25,11 +25,11 @@
     "lint-fix": "pnpm format && pnpm check-fix"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.6.4",
     "@swc/core": "^1.4.13",
     "@swc/helpers": "^0.5.8",
     "@types/node": "^20.12.7",
     "regenerator-runtime": "^0.14.1",
-    "rome": "^12.1.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
