@@ -27,7 +27,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.6.4",
     "@swc/core": "^1.4.13",
-    "@swc/helpers": "^0.5.8",
+    "@swc/helpers": "^0.5.9",
     "@types/node": "^20.12.7",
     "regenerator-runtime": "^0.14.1",
     "ts-node": "^10.9.2",
