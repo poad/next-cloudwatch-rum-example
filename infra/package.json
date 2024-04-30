@@ -25,7 +25,7 @@
     "lint-fix": "pnpm format && pnpm check-fix"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.7.1",
+    "@biomejs/biome": "^1.7.2",
     "@swc/core": "^1.5.2",
     "@swc/helpers": "^0.5.11",
     "@types/node": "^20.12.7",
