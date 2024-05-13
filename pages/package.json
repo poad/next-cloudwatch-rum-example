@@ -48,9 +48,9 @@
     "@storybook/react": "^8.0.10",
     "@storybook/testing-library": "^0.2.2",
     "@types/node": "^20.12.11",
-    "@types/react": "^18.3.1",
+    "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
-    "rimraf": "^5.0.5",
+    "rimraf": "^5.0.7",
     "storybook": "^8.0.10",
     "swc-loader": "^0.2.6",
     "typescript": "^5.4.5"
