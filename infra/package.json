@@ -28,7 +28,7 @@
     "@biomejs/biome": "^1.8.3",
     "@swc/core": "^1.7.5",
     "@swc/helpers": "^0.5.12",
-    "@types/node": "^22.0.2",
+    "@types/node": "^22.0.3",
     "regenerator-runtime": "^0.14.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
