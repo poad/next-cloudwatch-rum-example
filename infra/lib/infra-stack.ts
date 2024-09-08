@@ -1,19 +1,18 @@
 import * as cdk from 'aws-cdk-lib';
-import { Stack, StackProps, RemovalPolicy } from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
-import { Construct } from 'constructs';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
+import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
 import * as s3deploy from 'aws-cdk-lib/aws-s3-deployment';
-import { Effect, PolicyStatement, StarPrincipal } from 'aws-cdk-lib/aws-iam';
 import * as crypto from 'crypto';
+import { Construct } from 'constructs';
 
-export interface InfraStackProps extends StackProps {
+export interface InfraStackProps extends cdk.StackProps {
   name: string;
   region: string;
 }
 
-export class InfraStack extends Stack {
+export class InfraStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: InfraStackProps) {
     super(scope, id, props);
 
@@ -27,7 +26,7 @@ export class InfraStack extends Stack {
     const s3bucket = new s3.Bucket(this, 'S3Bucket', {
       bucketName: s3BucketName,
       versioned: false,
-      removalPolicy: RemovalPolicy.DESTROY,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
       autoDeleteObjects: false,
       accessControl: s3.BucketAccessControl.PRIVATE,
       publicReadAccess: false,
@@ -50,50 +49,36 @@ export class InfraStack extends Stack {
         .defaultChild as cdk.aws_cloudfront.CfnFunction
     ).addPropertyOverride('FunctionConfig.Runtime', 'cloudfront-js-2.0');
 
-    const oac = new cloudfront.CfnOriginAccessControl(
+    const originAccessControl = new cloudfront.S3OriginAccessControl(
       this,
       'OriginAccessControl',
       {
-        originAccessControlConfig: {
-          name: `${props.name}-static-site-oac`,
-          originAccessControlOriginType: 's3',
-          signingBehavior: 'no-override',
-          signingProtocol: 'sigv4',
-        },
+        originAccessControlName: `${props.name}-static-site-oac`,
+        signing: cloudfront.Signing.SIGV4_NO_OVERRIDE,
       },
     );
 
-    const cf = new cloudfront.CloudFrontWebDistribution(this, 'CloudFront', {
+    const cf = new cloudfront.Distribution(this, 'CloudFront', {
       comment: `for ${props.name}-static-site`,
-      originConfigs: [
-        {
-          s3OriginSource: {
-            s3BucketSource: s3bucket,
+      defaultBehavior: {
+        origin: origins.S3BucketOrigin.withOriginAccessControl(s3bucket, {
+          originAccessControl,
+        }),
+        compress: true,
+        functionAssociations: [
+          {
+            eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
+            function: websiteIndexPageForwardFunction,
           },
-          behaviors: [
-            {
-              isDefaultBehavior: true,
-              compress: true,
-              functionAssociations: [
-                {
-                  eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
-                  function: websiteIndexPageForwardFunction,
-                },
-              ],
-              cachedMethods: cloudfront.CloudFrontAllowedCachedMethods.GET_HEAD,
-              viewerProtocolPolicy:
-                cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-              minTtl: cdk.Duration.seconds(0),
-              maxTtl: cdk.Duration.seconds(86400),
-              defaultTtl: cdk.Duration.seconds(3600),
-            },
-          ],
-        },
-      ],
+        ],
+        cachedMethods: cloudfront.CachedMethods.CACHE_GET_HEAD,
+        viewerProtocolPolicy:
+          cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+      },
       httpVersion: cloudfront.HttpVersion.HTTP2_AND_3,
     });
     s3bucket.addToResourcePolicy(
-      new PolicyStatement({
+      new iam.PolicyStatement({
         sid: 'AllowCloudFrontServicePrincipalReadOnly',
         effect: iam.Effect.ALLOW,
         principals: [new iam.ServicePrincipal('cloudfront.amazonaws.com')],
@@ -107,16 +92,6 @@ export class InfraStack extends Stack {
       }),
     );
 
-    const cfnDistribution = cf.node.defaultChild as cloudfront.CfnDistribution;
-    cfnDistribution.addPropertyOverride(
-      'DistributionConfig.Origins.0.OriginAccessControlId',
-      oac.getAtt('Id'),
-    );
-    cfnDistribution.addPropertyOverride(
-      'DistributionConfig.Origins.0.S3OriginConfig.OriginAccessIdentity',
-      '',
-    );
-
     // eslint-disable-next-line no-new
     new s3deploy.BucketDeployment(this, 'DeployWebsite', {
       sources: [s3deploy.Source.asset(`${process.cwd()}/../pages/out`)],
@@ -126,10 +101,10 @@ export class InfraStack extends Stack {
     });
 
     s3bucket.addToResourcePolicy(
-      new PolicyStatement({
-        effect: Effect.ALLOW,
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
         actions: ['s3:GetObject'],
-        principals: [new StarPrincipal()],
+        principals: [new iam.StarPrincipal()],
         resources: [`${s3bucket.bucketArn}/*`],
       }),
     );
