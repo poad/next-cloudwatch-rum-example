@@ -13,7 +13,7 @@
     "format-check": "biome format bin && biome format lib",
     "format": "biome format --write bin && biome format --write lib",
     "check": "biome check bin && biome check lib",
-    "check-fix": "biome check --apply-unsafe bin && biome check --apply-unsafe lib",
+    "check-fix": "biome check --write --unsafe bin && biome check --write --unsafe lib",
     "prelint": "pnpm install",
     "prebuild": "pnpm install",
     "prefix": "pnpm install",
