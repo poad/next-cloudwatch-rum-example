@@ -10,31 +10,34 @@
     "build": "tsc",
     "watch": "tsc -w",
     "cdk": "cdk",
-    "format-check": "biome format bin && biome format lib",
-    "format": "biome format --write bin && biome format --write lib",
-    "check": "biome check bin && biome check lib",
-    "check-fix": "biome check --write --unsafe bin && biome check --write --unsafe lib",
+    "lint": "eslint -c eslint.config.mjs './{bin,lib}/**/*.ts'",
+    "lint-fix": "eslint -c eslint.config.mjs --fix './{bin,lib}/**/*.ts'",
     "prelint": "pnpm install",
     "prebuild": "pnpm install",
     "prefix": "pnpm install",
     "precheck": "pnpm install",
     "precheck-fix": "pnpm install",
     "preformat": "pnpm install",
-    "preformat-check": "pnpm install",
-    "lint": "pnpm format-check && pnpm check",
-    "lint-fix": "pnpm format && pnpm check-fix"
+    "preformat-check": "pnpm install"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@swc/core": "^1.7.36",
-    "@swc/helpers": "^0.5.13",
-    "@types/node": "^22.7.6",
-    "regenerator-runtime": "^0.14.1",
+    "@stylistic/eslint-plugin": "^2.9.0",
+    "@stylistic/eslint-plugin-js": "^2.9.0",
+    "@stylistic/eslint-plugin-plus": "^2.9.0",
+    "@stylistic/eslint-plugin-ts": "^2.9.0",
+    "@types/node": "^22.7.8",
+    "eslint": "^9.13.0",
+    "eslint-config-import": "^0.13.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-promise": "^7.1.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.11.0"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.162.1",
+    "aws-cdk-lib": "^2.163.0",
     "constructs": "^10.4.2",
     "source-map-support": "^0.5.21"
   }

@@ -9,9 +9,16 @@ updates:
     rebase-strategy: auto
     assignees:
       - poad
+    groups:
+      actions:
+        patterns:
+          - '*'
 
   - package-ecosystem: npm
-    directory: '/pages/'
+    directories:
+      - '/pages/'
+      - '/infra/'
+      - '/infra/function/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo
@@ -20,25 +27,7 @@ updates:
     rebase-strategy: auto
     assignees:
       - poad
-
-  - package-ecosystem: npm
-    directory: '/infra/'
-    schedule:
-      interval: daily
-      timezone: Asia/Tokyo
-    allow:
-      - dependency-type: all
-    rebase-strategy: auto
-    assignees:
-      - poad
-
-  - package-ecosystem: npm
-    directory: '/infra/function/'
-    schedule:
-      interval: daily
-      timezone: Asia/Tokyo
-    allow:
-      - dependency-type: all
-    rebase-strategy: auto
-    assignees:
-      - poad
+    groups:
+      npm:
+        patterns:
+          - '*'

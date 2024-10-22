@@ -1,4 +1,4 @@
 packages:
-  - 'pages/*'
-  - 'infra/*'
-  - 'infra/function/*'
+  - './pages'
+  - './infra'
+  - './infra/function'

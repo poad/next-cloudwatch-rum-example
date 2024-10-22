@@ -4,7 +4,6 @@ import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
 import * as s3deploy from 'aws-cdk-lib/aws-s3-deployment';
-import * as crypto from 'crypto';
 import { Construct } from 'constructs';
 
 export interface InfraStackProps extends cdk.StackProps {
@@ -15,11 +14,6 @@ export interface InfraStackProps extends cdk.StackProps {
 export class InfraStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: InfraStackProps) {
     super(scope, id, props);
-
-    const hash = crypto
-      .createHash('md5')
-      .update(new Date().getTime().toString())
-      .digest('hex');
 
     const s3BucketName = `${props.name}-static-site`;
 
@@ -92,7 +86,7 @@ export class InfraStack extends cdk.Stack {
       }),
     );
 
-    // eslint-disable-next-line no-new
+
     new s3deploy.BucketDeployment(this, 'DeployWebsite', {
       sources: [s3deploy.Source.asset(`${process.cwd()}/../pages/out`)],
       destinationBucket: s3bucket,
