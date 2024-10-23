@@ -1,3 +1,4 @@
+'use client';
 import { createTheme } from '@mui/material/styles';
 import { green } from '@mui/material/colors';
 
@@ -17,6 +18,7 @@ const options = {
     },
     typography: {
       useNextVariants: true,
+      fontFamily: 'var(--font-roboto)',
     },
   },
   drawerWidth: 240,

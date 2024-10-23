@@ -19,6 +19,8 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import MenuIcon from '@mui/icons-material/Menu';
 import themes from './styles/theme';
 import { useTheme } from '@mui/material/styles';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { Roboto } from 'next/font/google';
 
 const drawerWidth = 240;
 
@@ -123,24 +125,28 @@ function Base({ children }: { children: ReactNode }) {
   );
 }
 
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto',
+});
+
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
-      <ThemeProvider theme={themes}>
-        <head>
-          {/* PWA primary color */}
-          <meta name='theme-color' content={themes.palette.primary.main} />
-          { }
-          <link
-            rel='stylesheet'
-            href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
-          />
-        </head>
-        <body>
-          <CssBaseline />
-          <Base>{children}</Base>
-        </body>
-      </ThemeProvider>
+      <head>
+        {/* PWA primary color */}
+        <meta name='theme-color' content={themes.palette.primary.main} />
+      </head>
+      <body className={roboto.variable}>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={themes}>
+            <CssBaseline />
+            <Base>{children}</Base>
+          </ThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
