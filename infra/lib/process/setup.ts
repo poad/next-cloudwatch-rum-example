@@ -12,7 +12,7 @@ export const nextJsExport = () => {
     }
   });
 
-  ['yarn build'].forEach((cmd) => {
+  ['pnpm build'].forEach((cmd) => {
     childProcess.execSync(cmd, {
       cwd: `${nextJsAppRoot}`,
       stdio: ['ignore', 'inherit', 'inherit'],
