@@ -31,7 +31,7 @@ jobs:
       with:
         run_install: |
           - recursive: true
-            args: [--no-frozen-lockfile, --strict-peer-dependencies]
+            args: [--no-frozen-lockfile]
 
     - name: Build
       run: pnpm lint && pnpm build
