@@ -4,7 +4,7 @@ import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import stylisticTs from '@stylistic/eslint-plugin-ts';
 import tseslint from 'typescript-eslint';
-// @ts-ignore
+// @ts-expect-error ignore type errors
 import importPlugin from 'eslint-plugin-import';
 
 import pluginPromise from 'eslint-plugin-promise'
@@ -51,8 +51,8 @@ export default tseslint.config(
       '@stylistic/ts/indent': ['error', 2],
       'comma-dangle': ['error', 'always-multiline'],
       'arrow-parens': ['error', 'always'],
-      'indent': ['error', 2],
-      'quotes': ['error', 'single'],
+      indent: ['error', 2],
+      quotes: ['error', 'single'],
     },
   },
 );

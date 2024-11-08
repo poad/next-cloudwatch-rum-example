@@ -21,6 +21,7 @@ import themes from './styles/theme';
 import { useTheme } from '@mui/material/styles';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { Roboto } from 'next/font/google';
+import { AwsRum, AwsRumConfig } from 'aws-rum-web';
 
 const drawerWidth = 240;
 
@@ -133,6 +134,30 @@ const roboto = Roboto({
 });
 
 export default function Layout({ children }: { children: ReactNode }) {
+  try {
+    const config: AwsRumConfig = {
+      sessionSampleRate: 1,
+      identityPoolId: 'us-west-2:10814a26-356a-4508-ab85-92191012e076',
+      endpoint: 'https://dataplane.rum.us-west-2.amazonaws.com',
+      telemetries: ['performance','errors','http'],
+      allowCookies: true,
+      enableXRay: false,
+    };
+
+    const APPLICATION_ID = 'db4f32a7-fbfb-421d-a626-c7be4cd16cff';
+    const APPLICATION_VERSION = '1.0.0';
+    const APPLICATION_REGION = 'us-west-2';
+
+    new AwsRum(
+      APPLICATION_ID,
+      APPLICATION_VERSION,
+      APPLICATION_REGION,
+      config,
+    );
+  } catch {
+    // Ignore errors thrown during CloudWatch RUM web client initialization
+  }
+
   return (
     <html lang='en'>
       <head>
@@ -143,7 +168,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         <AppRouterCacheProvider>
           <ThemeProvider theme={themes}>
             <CssBaseline />
-            <Base>{children}</Base>
+            <Base>
+              {children}
+            </Base>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

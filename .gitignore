@@ -132,3 +132,5 @@ yarn-error.log*
 out
 
 pages/src/public/rum.js
+
+!eslint.config.js

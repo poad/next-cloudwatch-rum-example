@@ -2,6 +2,7 @@
   "name": "infra",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "license": "UNLICENSED",
   "bin": {
     "infra": "bin/infra.js"
@@ -10,8 +11,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "cdk": "cdk",
-    "lint": "eslint -c eslint.config.mjs './{bin,lib}/**/*.ts'",
-    "lint-fix": "eslint -c eslint.config.mjs --fix './{bin,lib}/**/*.ts'",
+    "lint": "eslint './{bin,lib}/**/*.ts'",
+    "lint-fix": "eslint --fix './{bin,lib}/**/*.ts'",
     "prelint": "pnpm install",
     "prebuild": "pnpm install",
     "prefix": "pnpm install",
@@ -21,23 +22,24 @@
     "preformat-check": "pnpm install"
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin": "^2.10.1",
-    "@stylistic/eslint-plugin-js": "^2.10.1",
-    "@stylistic/eslint-plugin-plus": "^2.10.1",
-    "@stylistic/eslint-plugin-ts": "^2.10.1",
-    "@types/node": "^22.9.0",
-    "eslint": "^9.14.0",
+    "@eslint/js": "^9.19.0",
+    "@stylistic/eslint-plugin": "^2.13.0",
+    "@stylistic/eslint-plugin-js": "^2.13.0",
+    "@stylistic/eslint-plugin-plus": "^2.13.0",
+    "@stylistic/eslint-plugin-ts": "^2.13.0",
+    "@types/node": "^22.13.1",
+    "eslint": "^9.19.0",
     "eslint-config-import": "^0.13.0",
-    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-import-resolver-typescript": "^3.7.0",
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-promise": "^7.1.0",
+    "eslint-plugin-promise": "^7.2.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3",
-    "typescript-eslint": "^8.13.0"
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.165.0",
+    "aws-cdk-lib": "^2.178.0",
     "constructs": "^10.4.2",
     "source-map-support": "^0.5.21"
   }

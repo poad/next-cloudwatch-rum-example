@@ -1,5 +1,5 @@
 {
-  "app": "pnpm dlx ts-node --prefer-ts-exts bin/infra.ts",
+  "app": "pnpm dlx tsx bin/infra.ts",
   "watch": {
     "include": [
       "**"
