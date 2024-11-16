@@ -143,7 +143,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         <AppRouterCacheProvider>
           <ThemeProvider theme={themes}>
             <CssBaseline />
-            <Base>{children}</Base>
+            <Base>
+              {children}
+            </Base>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
