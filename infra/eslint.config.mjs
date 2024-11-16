@@ -51,8 +51,10 @@ export default tseslint.config(
       '@stylistic/ts/indent': ['error', 2],
       'comma-dangle': ['error', 'always-multiline'],
       'arrow-parens': ['error', 'always'],
-      'indent': ['error', 2],
-      'quotes': ['error', 'single'],
+      indent: ['error', 2],
+      quotes: ['error', 'single'],
+      '@typescript-eslint/no-unused-expressions': 'off',
+      '@typescript-eslint/no-empty-function': 'off',
     },
   },
 );
