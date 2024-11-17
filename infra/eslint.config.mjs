@@ -53,8 +53,6 @@ export default tseslint.config(
       'arrow-parens': ['error', 'always'],
       indent: ['error', 2],
       quotes: ['error', 'single'],
-      '@typescript-eslint/no-unused-expressions': 'off',
-      '@typescript-eslint/no-empty-function': 'off',
     },
   },
 );
