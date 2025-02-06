@@ -39,6 +39,7 @@
     "web-vitals": "^4.2.4"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.19.0",
     "@next/bundle-analyzer": "^15.1.6",
     "@next/eslint-plugin-next": "^15.1.6",
