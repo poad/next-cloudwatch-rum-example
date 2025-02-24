@@ -39,8 +39,8 @@
     "web-vitals": "^4.2.4"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.20.0",
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.21.0",
     "@next/bundle-analyzer": "^15.1.7",
     "@next/eslint-plugin-next": "^15.1.7",
     "@storybook/addon-essentials": "^8.5.8",
@@ -55,10 +55,10 @@
     "@stylistic/eslint-plugin-jsx": "^2.13.0",
     "@stylistic/eslint-plugin-plus": "^2.13.0",
     "@stylistic/eslint-plugin-ts": "^2.13.0",
-    "@types/node": "^22.13.4",
+    "@types/node": "^22.13.5",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
-    "eslint": "^9.20.1",
+    "eslint": "^9.21.0",
     "eslint-config-import": "^0.13.0",
     "eslint-config-next": "^15.1.7",
     "eslint-import-resolver-typescript": "^3.8.3",
