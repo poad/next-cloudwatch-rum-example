@@ -19,7 +19,7 @@
     "@stylistic/eslint-plugin-ts": "^2.13.0",
     "eslint": "^9.21.0",
     "eslint-config-import": "^0.13.0",
-    "eslint-config-next": "^15.2.0",
+    "eslint-config-next": "^15.2.1",
     "eslint-import-resolver-typescript": "^3.8.3",
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.31.0",
@@ -28,8 +28,8 @@
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-storybook": "^0.11.3",
+    "eslint-plugin-storybook": "^0.11.4",
     "pnpm": "^10.5.2",
-    "typescript-eslint": "^8.25.0"
+    "typescript-eslint": "^8.26.0"
   }
 }

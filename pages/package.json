@@ -32,8 +32,8 @@
     "@mui/material": "^6.4.6",
     "@mui/material-nextjs": "^6.4.3",
     "@mui/system": "^6.4.6",
-    "aws-rum-web": "^1.19.0",
-    "next": "^15.2.0",
+    "aws-rum-web": "^1.20.0",
+    "next": "^15.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "web-vitals": "^4.2.4"
@@ -41,8 +41,8 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.21.0",
-    "@next/bundle-analyzer": "^15.2.0",
-    "@next/eslint-plugin-next": "^15.2.0",
+    "@next/bundle-analyzer": "^15.2.1",
+    "@next/eslint-plugin-next": "^15.2.1",
     "@storybook/addon-essentials": "^8.6.3",
     "@storybook/addon-interactions": "^8.6.3",
     "@storybook/addon-links": "^8.6.3",
@@ -55,12 +55,12 @@
     "@stylistic/eslint-plugin-jsx": "^2.13.0",
     "@stylistic/eslint-plugin-plus": "^2.13.0",
     "@stylistic/eslint-plugin-ts": "^2.13.0",
-    "@types/node": "^22.13.8",
+    "@types/node": "^22.13.9",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "eslint": "^9.21.0",
     "eslint-config-import": "^0.13.0",
-    "eslint-config-next": "^15.2.0",
+    "eslint-config-next": "^15.2.1",
     "eslint-import-resolver-typescript": "^3.8.3",
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.31.0",
@@ -69,10 +69,10 @@
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-storybook": "^0.11.3",
+    "eslint-plugin-storybook": "^0.11.4",
     "rimraf": "^6.0.1",
     "storybook": "^8.6.3",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.25.0"
+    "typescript-eslint": "^8.26.0"
   }
 }
