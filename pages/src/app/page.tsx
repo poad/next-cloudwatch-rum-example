@@ -1,6 +1,7 @@
 'use client';
 import { Box, Link, Typography } from '@mui/material';
 import { styled } from '@mui/system';
+import { JSX } from 'react';
 
 const StyledBox = styled(Box)(() => ({
   maxWidth: '880px',

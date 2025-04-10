@@ -10,14 +10,10 @@ import importPlugin from 'eslint-plugin-import';
 import pluginPromise from 'eslint-plugin-promise'
 
 export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
-  pluginPromise.configs['flat/recommended'],
   {
     ignores: [
       '**/*.d.ts',
-      '*.{js,jsx}',
+      '**/*.js',
       'src/tsconfig.json',
       'src/stories',
       '**/*.css',
@@ -27,6 +23,10 @@ export default tseslint.config(
       'dist',
     ],
   },
+  eslint.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
+  pluginPromise.configs['flat/recommended'],
   {
     files: ['./{bin,lib}/**/*.ts'],
     ...importPlugin.flatConfigs.recommended,
